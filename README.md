@@ -17,8 +17,7 @@
 * Copy your token and **copy** it bur **DO NOT** share it
 * Use the token instead of your GitHub password when Git asks for authentication
 ## 3. Connect Local Repository to GitHub
-* Initialize a new repo by opening a Git Bash terminal in the **project** folder and writting : git init
-* Link your local repo to the remote GitHub repository. In the same terminal write : git remote add origin https://github.com/noerajon/Industrial_Hydraulics_Project.git
+* Link your local repo to the remote GitHub repository. In the same terminal write : git clone https://github.com/noerajon/Industrial_Hydraulics_Project.git
 * To check the connection : git remote -v
 ## 4. Pulling
 The pulling process consists in updating your local files (on your computer) by comparing the files on GitHub (remotely) and your local files. The pull procedure acquires the modification on the the website on put them on your computer.
