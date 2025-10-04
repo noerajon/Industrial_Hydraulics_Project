@@ -9,8 +9,8 @@
 ## 1. Configure Git and Your Account
 * Do a right click and select **Open Git Bash here**, if you don't see it you may click on **display other options** after the right click
 * In the terminal write :
-** git config --global user.name "Your Name"
-** git config --global user.email "your.email@example.com"
+  * git config --global user.name "Your Name"
+  * git config --global user.email "your.email@example.com"
 ## 2. Generate a Personal Access Token (PAT) on GitHub:
 * Go to: Settings > Developer settings > Personal access tokens > Tokens(classic)
 * Click on Generate new token (classic) and select a duration of 90 days
