@@ -24,7 +24,7 @@ d.setTimeHydraulicStep(etstep); %set time analysis step
 d.openHydraulicAnalysis;       %start hydraulic simulation
 d.initializeHydraulicAnalysis; %inizialization of hydraulic simulation
 
-tstep=1;P=[];T_H=[];D=[];H=[];F=[];   %inizialization of result vectors
+tstep=1;P=[];T_H=[];D=[];H=[];F=[];V=[]; linkID= [];  %inizialization of result vectors
 while (tstep>0)                       %condition to run simulations each hour until the time simulation duration is reached (tstep=1)
     t=d.runHydraulicAnalysis;         %run the hydraulic analysis step hour 00, 01, 02....48
     P=[P; d.getNodePressure];         % get the pressure calculated in the nodes for the step
@@ -32,6 +32,8 @@ while (tstep>0)                       %condition to run simulations each hour un
     H=[H; d.getNodeHydraulicHead];     % get the node hydraulic head calculated in the nodes for the step
     F=[F; d.getLinkFlows];            % get the link flow rate for the step
     T_H=[T_H; t];                     %get simulation time in seconds
+    V = [V; d.getLinkVelocity];       % getting velocities
+    linkID = [linkID; d.getLinkValveNameID];
     tstep=d.nextHydraulicAnalysisStep; %if next step exist d.nextHydraulicAnalysisStep==1 else 0
 end
 
@@ -88,6 +90,22 @@ a=colorbar
 caxis([min(abs(cl)) max(abs(cl))]);
 a.Location="northoutside";
 ylabel(a,'Flow rate (l/s)','FontSize',10,'Rotation',0);
+
+
+%% System checks
+
+% CHeck Velocity always <2 m/s
+Vex= []; % the links with bigger velocities
+for i = 1 : length(V)
+    if V(i)>2
+        Vex=[Vex;V(i),linkID(i)];
+    end
+end
+if size(Vex)>0 
+    print('the folowing links have velocities bigger than 2' , Vex)
+end
+
+% Check max flowrates of wells 
 
 
 d.saveInputFile('Network_modified.inp');
