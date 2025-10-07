@@ -1,11 +1,10 @@
 % Clear
 clear all; close all; clc;
 % insert here the path where it is installed the EPANET-Matlab toolkit
-addpath(genpath('C:\Users\noera\Documents\Education\ENSE3\3A\COURSES\INDUSTRIAL HYDRAULICS\SOFTWARE\EPANET-Matlab-Toolkit-dev\epanet_matlab_toolkit'))
 start_toolkit; %to start the epanet toolkit
 %%
 % Load a network
-d = epanet(['Network_modified.inp']); %importa data from .inp file
+d = epanet(['year0.inp']); %importa data from .inp file
 
 %%
 
@@ -91,7 +90,7 @@ a.Location="northoutside";
 ylabel(a,'Flow rate (l/s)','FontSize',10,'Rotation',0);
 
 
-d.saveInputFile('Network_modified.inp');
+d.saveInputFile('year0_modified.inp');
 
 
 

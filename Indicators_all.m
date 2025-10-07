@@ -1,8 +1,7 @@
 clear all; close all; clc;
 % insert here the path where it is installed the EPANET-Matlab toolkit
-addpath(genpath('C:\Users\Utente\OneDrive - Politecnico di Milano\Didattica\2024-25\Project\Case1 Matlab\Matlab-toolkit\EPANET-Matlab-Toolkit-master'))
 start_toolkit; %to start the epanet toolkit
-nameInp={'year0.inp'};% 'year1.inp' 'year2.inp' 'year3.inp' 'year4.inp' 'year5.inp'};% 'year2.inp' 'year3.inp' 'year4.inp' 'year5.inp'};
+nameInp={'year0_modified.inp'};% 'year1.inp' 'year2.inp' 'year3.inp' 'year4.inp' 'year5.inp'};% 'year2.inp' 'year3.inp' 'year4.inp' 'year5.inp'};
 weeksInAYear=52;
 %% Loading network parameters
 
@@ -342,7 +341,7 @@ SRDEV=sum(sum(abs(SR-SRA)))./(length(years)*sum(years{1}.BD{1}>0));
 I9=1-(SRDEV/SRA)
 indicators=[I1;I2;I3;I4;I5;I6;I7;I8;I9];
 
-save(strcat(cd,'\Output4'));
+save(strcat(cd,'\Output0'));
 
 
 
