@@ -33,7 +33,7 @@ while (tstep>0)                       %condition to run simulations each hour un
     F=[F; d.getLinkFlows];            % get the link flow rate for the step
     T_H=[T_H; t];                     %get simulation time in seconds
     V = [V; d.getLinkVelocity];       % getting velocities
-    linkID = [linkID; d.getLinkValveNameID];
+    linkID = [linkID; d.getLinkPipeNameID];
     tstep=d.nextHydraulicAnalysisStep; %if next step exist d.nextHydraulicAnalysisStep==1 else 0
 end
 
