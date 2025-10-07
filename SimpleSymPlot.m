@@ -3,7 +3,7 @@ clear all; close all; clc;
 % insert here the path where it is installed the EPANET-Matlab toolkit
 start_toolkit; %to start the epanet toolkit
 %%
-% Load a network
+% Load a network hello world
 d = epanet(['Network_modified.inp']); %importa data from .inp file
 
 %%
