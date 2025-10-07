@@ -4,7 +4,7 @@ clear all; close all; clc;
 start_toolkit; %to start the epanet toolkit
 %%
 % Load a network
-d = epanet(['Network_modified.inp']); %importa data from .inp file
+d = epanet(['year0.inp']); %importa data from .inp file
 
 %%
 
@@ -92,6 +92,7 @@ a.Location="northoutside";
 ylabel(a,'Flow rate (l/s)','FontSize',10,'Rotation',0);
 
 
+<<<<<<< HEAD
 %% System checks
 
 % CHeck Velocity always <2 m/s
@@ -109,6 +110,9 @@ end
 
 
 d.saveInputFile('Network_modified.inp');
+=======
+d.saveInputFile('year0_modified.inp');
+>>>>>>> 0ad4e466f77db25fc7f99880dcdf8f36a5e10466
 
 
 
